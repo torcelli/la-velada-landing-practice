@@ -1,15 +1,136 @@
 ---
+
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<title>Landing</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<header class="flex flex-col md:flex-row items-center justify-center mt-6">
+			<div class="relative order-1 md:order-1">
+				<img src="./imgs/VeladaIII.png" class="h-8 md:h-14">
+			</div>
+			<div class="relative order-2 md:order-2 md:ml-auto">
+				<button class="text-xl text-zinc-50 bg-zinc-900 p-2 pl-4 pr-4 rounded-sm hover:text-zinc-300">Tienda <i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+				
+			</div>
+		</header>
+		
+			
+		
+		<main>
+			<section id="boxers" class={`
+				[&>div>img]:bottom-0
+				[&>div]:w-auto
+				pt-24 border-b border-white/10
+			`}>
+				<div class="relative lg:h-full sm:h-[50vh] w-full">
+					<img src="./imgs/FONDO.jpg" alt="fondo" class="absolute top-0 left-0 h-full object-cover w-full z-0">
+					<img src="./imgs/FOTOSv3.png" alt="boxers" class="w-4/6 relative z-10 animate-fade animate-duration-[1500ms]">
+				</div>
+			</section>
+				
+				<div class="flex flex-col md:flex-row">
+					<div class="md:ml-48">
+						<div class="mx-auto w-11/12 h-auto md:mt-4 md:p-2">
+							<div>
+								<img src="./imgs/Baner550x180-02.png" class="mx-auto">
+							</div>
+						</div>
+						<div class="mx-auto w-11/12 h-auto md:mt-4 md:p-2">
+							<div>
+								<img src="./imgs/INH_INH_Retail_598_LaVeladadelAnoIIIConsigue20E_IMG_580x200_NA_H_1_ES_ES_Apr2023_.png" class="mx-auto">
+							</div>
+						</div>
+					</div>
+
+					<div class="md:mt-4 md:ml-10 mx-auto md:w-1/3">
+						<img src="./imgs/alsaMap.jpg" class="mt-auto mb-auto">
+					</div>
+				</div>
+				
+				<img src="./imgs/Artistas.jpg" class="mx-auto m-2">
+				
+						
+		</main>
+		<footer class="bg-zinc-900 flex flex-col items-center">
+			<div class="md:flex">
+				<div>
+					<i class="fa-brands fa-instagram text-zinc-100 text-2xl m-4"></i>
+				</div>
+				<div>
+					<i class="fa-brands fa-facebook text-zinc-100 text-2xl m-4"></i>
+				</div>
+			</div>
+			<div class="mx-auto">
+				<img src="./imgs/LOGOVA-1-327x200_c.png" class="mt-auto mb-auto">
+			</div>
+			<div class="mx-auto">
+				<img src="./imgs/sponsors-2180x120_c.png" class=" md:h-10 sm:h-5 md:m-10 sm:m-5">
+			</div>			
+			<div class=" text-white m-4 text-sm">
+				<p>© 2023 La Velada del Año | Todos los derechos reservados.</p>
+			</div>
+		</footer>
+		<button id="btn-scroll-to-top" class="animate-fade-left animate-once animate-duration-[700ms] animate-ease-in-out animate-normal animate-fill-forwards">
+
+			 <i class="fa-sharp fa-solid fa-caret-up"></i>
+			 <div>Subir</div>
+		</button>
+		
+		
 	</body>
+	<script>
+		
+		const btnScrollToTop = document.querySelector('#btn-scroll-to-top');
+
+
+
+// Mostrar u ocultar el botón al hacer scroll
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+        btnScrollToTop.style.display = 'block';
+    } else {
+        btnScrollToTop.style.display = 'none';
+    }
+});
+
+// Desplazarse suavemente al principio de la página al hacer clic en el botón
+btnScrollToTop.addEventListener('click', function () {
+    window.scrollTo({
+        top: 0,
+		behavior: 'smooth'
+
+    });
+});
+
+
+	</script>
 </html>
+
+
+
+<style is:global>
+#btn-scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#btn-scroll-to-top:hover {
+    opacity: 1;
+}
+
+</style>
